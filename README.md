@@ -62,3 +62,6 @@ import mysql.connector
 
 ## Functions and their uses
 - ```get_sum_sites(siteData)```: returns the sum of the 5 sites, of which the specific data to look at is based on siteData
+- ```get_new_site_row(connection)```: does not return anything, it helps to reconnect to the database and check for new data
+- 
+- 
