@@ -1,9 +1,9 @@
 # Dynamic-Battery-Choosing-Algorithm
 
 ## Context of Code
-* To build an algorithm to select the best combinations of 5 batteries (Batt1, Batt2, Batt3, Batt4, Batt5) that can be used to reduce the total load of 5 sites (Site1, Site2, Site3, Site4, Site5) during an activation period (from StartTime to EndTime of ActivationNotice).
-* Each battery corresponds to a site (Batt1 -> Site1, Batt2 -> Site2, etc.)
-* Note: Sometimes batteries are labeled BESS[i], take BESS == Batt
+To build an algorithm to select the best combinations of 5 batteries (Batt1, Batt2, Batt3, Batt4, Batt5) that can be used to reduce the total load of 5 sites (Site1, Site2, Site3, Site4, Site5) during an activation period (from StartTime to EndTime of ActivationNotice).
+- Each battery corresponds to a site (Batt1 -> Site1, Batt2 -> Site2, etc.)
+- Note: Sometimes batteries are labeled BESS[i], take BESS == Batt
 
 ## Tables used from MySQL Database
 ### ActivationNotice: records ReceivedTime, TotalLoad, StartTime, EndTime, Type
