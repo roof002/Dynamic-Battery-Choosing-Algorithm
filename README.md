@@ -50,6 +50,7 @@ These are some packages you should import for the use of this code:
 - Pandas: For data manipulation and analysis.
 
 With these packages, type this:
+```
 import pandas as pd
 import numpy as np
 import itertools
@@ -57,6 +58,7 @@ from itertools import combinations
 from datetime import datetime, timedelta
 import time
 import mysql.connector
+```
 
 ## Functions and their uses
-- get_sum_sites(siteData): returns the sum of the 5 sites, of which the specific data to look at is based on siteData
+- ```get_sum_sites(siteData)```: returns the sum of the 5 sites, of which the specific data to look at is based on siteData
