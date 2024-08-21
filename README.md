@@ -63,5 +63,8 @@ import mysql.connector
 ## Functions and their uses
 - ```get_sum_sites(siteData)```: returns the sum of the 5 sites, of which the specific data to look at is based on siteData
 - ```get_new_site_row(connection)```: does not return anything, it helps to reconnect to the database and check for new data
-- 
-- 
+- ```get_discharge_limits()```: returns the original discharge limits of each battery (fixed, but you can change this accordingly)
+- ```get_new_site_row(connection)```: returns the newest data in SitesPowerNow
+- ```get_new_batt_row(connection)```: returns the newest data in BatteriesTable
+- ```check_discharge_rates(siteData)```: returns the adjusted discharge limits of each battery, after comparing each site's data at the current minute
+- ```get_score_for_batt(batt, scoreTable, rowIndex=-1)```: returns latest battery scores
