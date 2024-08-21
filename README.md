@@ -42,3 +42,21 @@ This table records ReadTime, Date, Period, Site1, Site2, Site3, Site4, Site5
 - **Date** (_YYYY-MM-DD HH:MM:00_, timestamp): Rounds down each record to the minute
 - **Period** (int): Splits every 30mins into 1 Period, for 48 Periods
 - **Site[i]** (_kW/h_, float): For i = 1,2,3,4,5, this updates the rate of battery used to run each Site
+
+
+## Packages to import in Python
+These are some packages you should import for the use of this code:
+- NumPy: For numerical computations and array operations.
+- Pandas: For data manipulation and analysis.
+
+With these packages, type this:
+import pandas as pd
+import numpy as np
+import itertools
+from itertools import combinations
+from datetime import datetime, timedelta
+import time
+import mysql.connector
+
+## Functions and their uses
+- get_sum_sites(siteData): returns the sum of the 5 sites, of which the specific data to look at is based on siteData
