@@ -86,4 +86,4 @@ import mysql.connector
 
 ### Fractional Knapsack
 This algorithm helps with the choosing of the batteries. 
-**IDEA OF FRACTIONAL KNAPSACK**: Imagine having a knapsack (bag) that can carry a maximum weight (kWh required). You have several items (Batt1 to Batt5), each with a specific weight and value. The goal is to fill the knapsack to maximize the total value of the items inside, but you can take only part of any item if needed.
+- **IDEA OF FRACTIONAL KNAPSACK**: Imagine having a knapsack (bag) that can carry a maximum weight (kWh required). You have several items (Batt1 to Batt5), each with a specific weight and value. The goal is to fill the knapsack to maximize the total value of the items inside, but you can take only part of any item if needed.
