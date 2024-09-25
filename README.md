@@ -61,10 +61,29 @@ import mysql.connector
 ```
 
 ## Functions and their uses
+### Get Functions
 - ```get_sum_sites(siteData)```: returns the sum of the 5 sites, of which the specific data to look at is based on siteData
 - ```get_new_site_row(connection)```: does not return anything, it helps to reconnect to the database and check for new data
 - ```get_discharge_limits()```: returns the original discharge limits of each battery (fixed, but you can change this accordingly)
-- ```get_new_site_row(connection)```: returns the newest data in SitesPowerNow
-- ```get_new_batt_row(connection)```: returns the newest data in BatteriesTable
+- ```get_new_site_row(connection)```: returns the newest data in **TABLE** SitesPowerNow
+- ```get_new_batt_row(connection)```: returns the newest data in **TABLE** BatteriesTable
 - ```check_discharge_rates(siteData)```: returns the adjusted discharge limits of each battery, after comparing each site's data at the current minute
 - ```get_score_for_batt(batt, scoreTable, rowIndex=-1)```: returns latest battery scores
+
+### MySQL Get Functions
+- ```connection```: does not return anything. For your MySQL credentials
+- ```get_dfSites_from_mysql(connection)```: returns Date, Site1, Site2, Site3, Site4, Site5 data from **TABLE** SitesPowerNow
+- ```get_dfActNot_from_mysql(connection)```: returns ReceivedTime, TotalLoad, StartTime, EndTime data from **TABLE** ActivationNotice
+- ```get_dfBatt_from_mysql(connection)```: returns ReadTime, BESS1_Status, BESS1_Capacity, BESS2_Status, BESS2_Capacity, BESS3_Status, BESS3_Capacity, BESS4_Status, BESS4_Capacity, BESS5_Status, BESS5_Capacity data from **TABLE** BatteriesTable
+- ```execute_query(connection, query, data)```: to execute a query on MySQL table
+- ```reconnect()```: does not return anything, it helps to reconnect to the database generally
+- ```get_specific_site_row(connection, timestamp)```: returns 1 specified row of data from **TABLE** SitesPowerNow
+- ```get_specific_batt_row(connection, target_time)```: returns 1 specified row of data from **TABLE** BatteriesTable
+
+### Specified queries required
+- ```insert_query```: sends a (current time, 0/-1, int, 0/-1, int, 0/-1, int, 0/-1, int, 0/-1, int) query to insert in MySQL **TABLE** SitesCommand
+- ```end_query```: sends a (current time, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) query to insert in MySQL **TABLE** SitesCommand
+
+### Fractional Knapsack
+This algorithm helps with the choosing of the batteries. 
+**IDEA OF FRACTIONAL KNAPSACK**: Imagine having a knapsack (bag) that can carry a maximum weight (kWh required). You have several items (Batt1 to Batt5), each with a specific weight and value. The goal is to fill the knapsack to maximize the total value of the items inside, but you can take only part of any item if needed.
